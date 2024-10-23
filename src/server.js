@@ -10,6 +10,9 @@ const app = express()
 const port = process.env.PORT || 3001
 const hostname = process.env.HOST_NAME
 
+//config req.body
+app.use(express.json()) //for json
+app.use(express.urlencoded({ extended: true}))
 //config template engine
 configViewEngine(app);
 
@@ -17,10 +20,10 @@ configViewEngine(app);
 app.use('/', webRouter);
 
 //simple query
-connection.query('SELECT * FROM Users', (error, results, fields) => {
-  if (error) throw error
-  console.log(">> result", results)
-})
+// connection.query('SELECT * FROM Users', (error, results, fields) => {
+//   if (error) throw error
+//   console.log(">> result", results)
+// })
 
 
 app.listen(port, hostname, () => {

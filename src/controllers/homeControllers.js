@@ -1,10 +1,19 @@
+const connection = require("../config/database");
+
 const getHomePage = (req, res) => {
-       res.send('Hello World & ThucTD')
-}
+  return res.render('home.ejs')
+};
 const getThuctd = (req, res) => {
-     res.render('sample.ejs')
-} 
-module.exports = {
-     getHomePage,
-     getThuctd
+  res.render("sample.ejs");
+};
+
+const postCreateUser = (req, res) => {
+  console.log('>>> result: ', req.body)
+   res.send('create add new user')
 }
+
+module.exports = {
+  getHomePage,
+  getThuctd,
+  postCreateUser
+};
