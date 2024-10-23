@@ -8,37 +8,46 @@
      <link rel="stylesheet" href="../css/style.css">
 </head>
 
-<body>
-     <div class="topnav">
-          <a class="active" href="#home">Home</a>
-          <a href="#news">News</a>
-          <a href="#contact">Contact</a>
-          <a href="#about">About</a>
-     </div>
-     <br />
-     <div class="form-add-new">
-          <form action="/create-user" method="post">
-               <fieldset>
-                    <legend> Add new users</legend>
-                    <div class="input-group">
-                         <label> Email: </label>
-                         <input type="text" id="emailId" name="email" />
-                    </div>
-                    <div class="input-group">
-                         <label> Name: </label>
-                         <input type="text" id="nameId" name="name" />
-                    </div>
-                    <div class="input-group">
-                         <label> City: </label>
-                         <input type="text" name="city" />
-                    </div>
-                    <div>
-                         <button> Save </button>
-                    </div>
-               </fieldset>
-          </form>
 
+<body>
+
+     <div class="topnav">
+          <a class="active" href="/">Home</a>
+          <a href="/create">Create User</a>
      </div>
+     <div class="table-container">
+          <div class="title"> List Users</div>
+          <table>
+               <tr>
+                    <th>ID</th>
+                    <th>Email</th>
+                    <th>Name</th>
+                    <th>City</th>
+                    <th>Actions</th>
+               </tr>
+               <% listU.forEach(function(u) { %>
+                    <tr>
+                         <td>
+                              <%= u.id %>
+                         </td>
+                         <td>
+                              <%= u.email %>
+                         </td>
+                         <td>
+                              <%= u.name %>
+                         </td>
+                         <td>
+                              <%= u.city %>
+                         </td>
+                         <td>
+                              <button><a href="/update/<%= u.id %>"> Edit</a> </button>
+                              <button> Edit</button>
+                         </td>
+                    </tr>
+                    <% });%>
+          </table>
+     </div>
+
 </body>
 
 </html>

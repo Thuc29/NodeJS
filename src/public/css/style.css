@@ -52,3 +52,35 @@ button {
      margin: 10px;
      cursor: pointer;
 }
+
+/* table */
+table {
+     border-collapse: collapse;
+     width: 100%;
+}
+
+th,
+td {
+     padding: 8px;
+     text-align: left;
+     border-bottom: 1px solid #ddd;
+}
+
+tr:hover {
+     background-color: rgb(95, 255, 250);
+}
+
+.table-container {
+     padding: 15px 20px;
+}
+
+.title {
+     font-size: 25px;
+     font-weight: 600;
+     padding-bottom: 10px;
+}
+
+/* update */
+.d-none {
+     display: none;
+}
